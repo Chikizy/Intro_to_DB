@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS Authors (
 
 CREATE TABLE IF NOT EXISTS Customers (
     customer_id INT PRIMARY KEY,
-    customer_name VARCHAR (215) NOT NULL,
+    customer_name VARCHAR(215) NOT NULL,
     email VARCHAR(215),
     adddress TEXT NOT NULL,
 );
@@ -30,11 +30,11 @@ CREATE TABLE IF NOT EXISTS Orders (
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
-CREATE TABLE IF NOT EXISTS Order_Details(
+CREATE TABLE IF NOT EXISTS Order_Details (
     orderdetailid INT PRIMARY KEY,
     order_id INT,
     book_id INT,
     quantity DOUBLE,
-    FOREIGN KEY (order_id) REFERENCES Customers(order_id)
+    FOREIGN KEY (order_id) REFERENCES Customers(order_id),
     FOREIGN KEY (book_id) REFERENCES Customers(book_id)
 )
